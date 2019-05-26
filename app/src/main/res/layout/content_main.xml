@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edtPlate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Plate"
+        android:inputType="textPostalAddress"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnAdd"/>
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADICIONAR PLACA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/cbSeparetorEnabled"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enable separator"
+        app:layout_constraintTop_toBottomOf="@id/edtPlate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutEdtPlate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Plate"
+        app:layout_constraintTop_toBottomOf="@id/cbSeparetorEnabled"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.olvr.maskplate.TextInputPlateEditText
+            android:id="@+id/inputEdtPlate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPostalAddress"
+            app:maskEnabled="true"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/labelNewPattern"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="New Pattern: false"
+        app:layout_constraintTop_toBottomOf="@id/inputLayoutEdtPlate"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/labelOldPattern"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Old Pattern: false"
+        app:layout_constraintTop_toBottomOf="@id/labelNewPattern"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/labelValid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Valid: false"
+        app:layout_constraintTop_toBottomOf="@id/labelOldPattern"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
